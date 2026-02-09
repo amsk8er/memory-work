@@ -1,301 +1,182 @@
+<div align="center">
+
 # Memory Work
 
-> An AI-first knowledge management system with evolvable memory
+**An AI-first knowledge management system with evolvable memory**
 
-**Memory Work** is a framework for building a personal AI partner that truly knows you—not through training, but through a four-layer memory architecture that grows and adapts over time.
+[中文](./README_CN.md) | English
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Claude](https://img.shields.io/badge/Built%20for-Claude-blueviolet)](https://claude.ai)
+[![Obsidian](https://img.shields.io/badge/Works%20with-Obsidian-purple)](https://obsidian.md)
 
-## What Is This?
-
-Traditional AI assistants suffer from "amnesia"—every conversation starts from scratch. You spend time re-explaining context, repeating preferences, and manually feeding background information.
-
-Memory Work solves this by giving Claude a **persistent, evolving memory system** that:
-
-- **Remembers** your decisions, preferences, and work patterns
-- **Learns** from surprises—when you act differently than expected
-- **Adapts** through weekly calibration conversations
-- **Scales** through divide-and-conquer zone architecture
+</div>
 
 ---
 
-## Core Features
+## The Problem
 
-### 🧠 Four-Layer Memory Architecture
+Every time you start a conversation with AI, it forgets everything. You repeat context, re-explain preferences, and manually feed background information. Again and again.
+
+**Memory Work** fixes this.
+
+---
+
+## What It Does
+
+Memory Work gives Claude a **persistent, evolving memory** through a file-based architecture:
+
+| Layer | File | What It Stores |
+|-------|------|----------------|
+| Layer 0 | `SOUL.md` / `USER.md` | Identity—who Claude is, who you are |
+| Layer 1 | `_this_week.md` | Working memory—current focus |
+| Layer 2 | `MEMORY.md` | Long-term memory—decisions, preferences, insights |
+| Layer 3 | `PROCEDURES.md` | Muscle memory—"when X happens, do Y" patterns |
+
+Claude reads these files at the start of every conversation. **No manual context feeding.**
+
+---
+
+## How Memory Evolves
 
 ```
-Layer 0 · Persistent Memory   SOUL.md / USER.md          Identity-level, rarely changes
-Layer 1 · Working Memory      _this_week.md              Weekly focus, append-only
-Layer 2 · Dynamic Memory      MEMORY.md                  Has lifecycle, cross-week
-Layer 3 · Procedural Memory   PROCEDURES.md              Context→Action patterns
+You work → Claude detects something new (surprise!) → Proposes to remember it
+                                ↓
+                    You confirm → Memory saved
+                                ↓
+              Weekly review → Calibrate what's useful → Memories strengthen or fade
 ```
 
-### 🎯 Surprise-Driven Learning
-
-Based on research from [Titans](https://arxiv.org/abs/2501.00663) and [MemSkill](https://arxiv.org/abs/2501.03313):
-
-- AI detects "surprise"—deviations from established patterns
-- High surprise → proposes writing to memory (with your confirmation)
-- Low surprise → no noise, no clutter
-- Weekly calibration → memory strength adjusts based on usefulness
-
-### 📅 Week-Based Rhythm
-
-- **Monday**: Dictate your week, AI structures it
-- **Mid-week**: Work in flow, AI tracks progress
-- **Friday**: Review & archive, memory calibration
-
-### 🏛️ Zone Agent System
-
-Each area of your knowledge base has its own "agent":
-- **Focus Zone**: Weekly work rhythm
-- **Materials**: Personal archives (high-sensitivity protection)
-- **Tools**: Reusable templates
-- **Skills**: Custom AI capabilities
-
-### 🔧 Extensible Skills
-
-Package your workflows as reusable skills:
-```
-06 Skills/
-├── datetime-check/     ← Time calibration
-├── ics-generator/      ← Calendar export
-├── memory-review/      ← Memory calibration
-└── your-skill/         ← Your custom skill
-```
+Based on [Titans](https://arxiv.org/abs/2501.00663) (surprise-driven learning) and [MemSkill](https://arxiv.org/abs/2501.03313) (evolvable memory).
 
 ---
 
 ## Quick Start
 
-### Prerequisites
+### 1. Clone
 
-- **Obsidian** (or any Markdown-based note-taking app)
-- **Claude Desktop** with Projects or Claude Code (Cowork)
-- Basic familiarity with Markdown
+```bash
+git clone https://github.com/yiliqi78/memory-work.git
+```
 
-### Installation
+### 2. Open in Obsidian
 
-1. **Clone or download this repo**
-   ```bash
-   git clone https://github.com/yourusername/memory-work.git
-   cd memory-work
-   ```
+Open folder as vault → Select `memory-work`
 
-2. **Open in Obsidian**
-   - Open Obsidian
-   - "Open folder as vault"
-   - Select the `memory-work` folder
+### 3. Connect to Claude
 
-3. **Configure for Claude**
-   - If using Claude Desktop Projects: Add this folder as a project
-   - If using Claude Code: Open this folder in your IDE
+- **Claude Desktop**: Add folder to a Project
+- **Claude Code**: Open folder in IDE
 
-4. **Customize core files**
-   - Edit `USER.md` with your information
-   - Customize `SOUL.md` for Claude's personality
-   - Review `AGENTS.md` behavioral rules
+### 4. Customize
 
-5. **Start your first week**
-   - Open `00 Focus Zone/_this_week.md`
-   - Start dictating what you want to do this week
-   - Claude will structure it and pull relevant materials
+Edit `USER.md` with your info. Optionally customize `SOUL.md` for Claude's personality.
+
+### 5. Start
+
+Open `00 Focus Zone/_this_week.md` and start talking to Claude.
 
 ---
 
-## How It Works
-
-### Session Startup (Automatic)
-
-Every time Claude starts a conversation, it automatically:
-
-1. Executes `datetime-check` (calibrates time)
-2. Reads `SOUL.md` (who am I?)
-3. Reads `USER.md` (who am I helping?)
-4. Reads `_this_week.md` (what's the current focus?)
-5. Reads `MEMORY_LOG.md` (memory system state)
-6. Loads relevant memories from `MEMORY.md` and `PROCEDURES.md`
-
-**You don't manually feed context. The system maintains it.**
-
-### Memory Evolution
-
-```
-Conversation → Surprise Detection → Write Proposal → User Confirms → Memory Updated
-                     ↓ (if not surprising)
-                   Silent Pass
-```
-
-Every week:
-```
-Week Review → memory-review skill → Show operations → User feedback → Calibration
-```
-
-### Procedural Learning
-
-When you do something the same way 2+ times:
-```
-Pattern Detected → Propose adding to PROCEDURES.md → User confirms → AI suggests it next time
-```
-
----
-
-## Architecture
+## Project Structure
 
 ```
 memory-work/
-├── AGENTS.md                   ← AI behavioral instructions
-├── SOUL.md                     ← AI personality & relationship
-├── USER.md                     ← Your profile (quick reference)
-├── MEMORY.md                   ← Dynamic memory (Layer 2)
-├── PROCEDURES.md               ← Procedural memory (Layer 3)
+├── AGENTS.md              # How Claude behaves
+├── SOUL.md                # Claude's personality
+├── USER.md                # Your profile
+├── MEMORY.md              # Long-term memories
+├── PROCEDURES.md          # Behavioral patterns
 │
-├── 00 Focus Zone/              ← Weekly work rhythm
-│   ├── _this_week.md           ← Current week (Layer 1)
-│   ├── _template_this_week.md
-│   ├── _workflow_guide.md
-│   ├── MEMORY_LOG.md           ← Memory system log
-│   ├── ITERATION_LOG.md        ← Architecture evolution log
-│   └── _archive/               ← Past weeks
+├── 00 Focus Zone/         # Weekly workspace
+│   ├── _this_week.md      # Current week
+│   ├── MEMORY_LOG.md      # Memory system log
+│   └── _archive/          # Past weeks
 │
-├── 01 Materials/               ← Your personal archives
-│   ├── About Me/               ← High-sensitivity profiles
-│   ├── Methodology/
-│   ├── Thinking/
-│   └── ...
-│
-├── 02 Tools/                   ← Reusable templates
-│
-└── 06 Skills/                  ← Custom AI capabilities
-    ├── datetime-check/
-    ├── ics-generator/
-    ├── memory-review/
-    └── your-skill/
+├── 01 Materials/          # Your knowledge base
+├── 02 Tools/              # Reusable templates
+└── 06 Skills/             # Custom AI capabilities
 ```
 
 ---
 
-## Example Workflows
+## Weekly Rhythm
 
-### Starting Your Week
-
-```
-You: "This week I want to finish the project proposal,
-      prep for the client meeting on Wednesday,
-      and write that blog post I've been putting off."
-
-Claude:
-1. Breaks down into tasks
-2. Searches your vault for related materials
-3. Generates schedule
-4. Creates .ics calendar file
-5. Asks you to confirm uncertainties
-```
-
-### Memory Calibration (Friday)
-
-```
-Claude: "Let's review this week's memory operations.
-         I wrote 2 new entries, retrieved 3 existing ones.
-
-         The 'project decision' entry I wrote—did that help you this week?
-         Should I keep tracking your pattern of [X behavior]?
-         Anything important I missed?"
-
-You: [Provide feedback]
-
-Claude: [Adjusts memory strength, surprise threshold, archives old memories]
-        [Writes calibration results to MEMORY_LOG.md]
-```
+| Phase | You Do | Claude Does |
+|-------|--------|-------------|
+| **Monday** | Dictate what you want to do | Structure tasks, pull materials |
+| **Mid-week** | Work and add notes | Track progress, search vault |
+| **Friday** | Review memories | Calibrate, archive, prep next week |
 
 ---
 
-## Design Principles
+## Key Features
 
-### 1. Voice-First
-Dictate naturally. Don't force yourself into structured input.
+### 🧠 Four-Layer Memory
+Persistent identity → Weekly focus → Long-term insights → Action patterns
 
-### 2. Surprise-Driven
-Only write to memory when something deviates from established patterns. No noise.
+### 🎯 Surprise-Driven
+Only remembers what's new or different. No noise.
 
-### 3. User-Confirmed
-AI never writes to long-term memory without your explicit confirmation.
+### ✅ User-Confirmed
+Claude proposes, you approve. Nothing written without consent.
 
-### 4. Evolvable
-Memory system has lifecycle. Strong memories persist, weak ones fade. Weekly calibration keeps it relevant.
+### 📁 Zone Agents
+Each folder has its own rules. Scales to any vault size.
 
-### 5. Divide & Conquer
-Each zone has its own agent with specific rules. System scales to any vault size.
-
----
-
-## Inspiration
-
-This system is built on insights from:
-
-- **[Titans: Learning to Memorize at Test Time](https://arxiv.org/abs/2501.00663)** — Surprise-driven memory formation
-- **[MemSkill: Transferrable and Evolvable Memory Skill Library](https://arxiv.org/abs/2501.03313)** — Skill-based memory patterns
-- **Obsidian PKM best practices** — Markdown-first, local-first, link-first
-- **Real-world usage** — Battle-tested in managing 10+ parallel projects
+### 🔧 Extensible Skills
+Package workflows as reusable modules in `06 Skills/`.
 
 ---
 
-## Roadmap
+## Design Philosophy
 
-- [ ] Skills marketplace (share and discover community skills)
-- [ ] Memory visualization (graph view of memory activation patterns)
-- [ ] Multi-language support (currently English-focused)
-- [ ] Mobile companion app (quick dictation on the go)
-- [ ] Advanced memory decay algorithms (more nuanced lifecycle management)
+1. **Voice-first** — Dictate naturally, Claude structures
+2. **Local-first** — Your data stays on your machine
+3. **Plain text** — Markdown files, no vendor lock-in
+4. **Evolvable** — System grows smarter over time
+
+---
+
+## Requirements
+
+- [Obsidian](https://obsidian.md) (or any Markdown editor)
+- [Claude Desktop](https://claude.ai/download) or Claude Code
+- That's it
 
 ---
 
 ## Contributing
 
-We welcome contributions! Whether it's:
-- New skills to add to the library
-- Improvements to the memory protocols
-- Documentation enhancements
+See [CONTRIBUTING.md](CONTRIBUTING.md). We welcome:
+- New skills
+- Documentation improvements
+- Translations
 - Bug fixes
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT — see [LICENSE](LICENSE)
 
 ---
 
 ## Acknowledgments
 
-Created by [Your Name] (@yourusername)
+Created by [@yiliqi78](https://github.com/yiliqi78)
 
-Based on the "Focus Zone" methodology developed through real-world practice managing AI consulting, product development, and teaching workflows.
-
-Special thanks to:
-- Anthropic team for Claude
-- Obsidian team for the incredible PKM platform
-- The AI research community for Titans and MemSkill papers
+Built on insights from:
+- [Titans: Learning to Memorize at Test Time](https://arxiv.org/abs/2501.00663)
+- [MemSkill: Transferrable and Evolvable Memory Skill Library](https://arxiv.org/abs/2501.03313)
+- The Obsidian and Claude communities
 
 ---
 
-## Get Started
+<div align="center">
 
-Ready to build your AI partner?
+**Your AI learns about you through collaboration, not training.**
 
-1. Clone this repo
-2. Open in Obsidian
-3. Customize `USER.md` and `SOUL.md`
-4. Start your first week in `_this_week.md`
+[Get Started →](./docs/QUICKSTART.md)
 
-Your AI will learn about you with every conversation. Not through training—through collaboration.
-
----
-
-**Questions? Ideas? Issues?**
-
-- Open an issue on GitHub
-- Join our Discord community (coming soon)
-- Follow updates: [@yourusername](https://twitter.com/yourusername)
+</div>
