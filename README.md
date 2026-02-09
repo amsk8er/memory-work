@@ -207,28 +207,34 @@ cursor .   # or: code .
 
 ### 3. Start Talking
 
-Claude will guide you through initialization:
+**Send any message to start** (e.g., "Let's begin", "Hi"), Claude will automatically detect it's a first-time setup and guide you through initialization:
 
 ```
+You: "Let's begin"
+
 Claude: "Welcome to Memory Work! 🎉
 
-        First, choose your language:
-        1. 中文
-        2. English"
+         This is a knowledge management system that gives AI persistent memory.
 
-You: "1"
+         First, choose your preferred language:
+         1. 中文
+         2. English
 
-Claude: [Switches to Chinese templates]
-        "好的！让我快速了解你：
-        1. 你希望我怎么称呼你？
-        2. 你的职业是什么？
-        3. 目前在做什么项目？"
+         Enter 1 or 2:"
 
-You: "叫我小明，我是产品经理，在做一个 AI 教育产品"
+You: "2"
 
-Claude: [Creates USER.md, MEMORY.md, _本周.md]
-        "小明，今天周一，新的一周开始。
-        说说这周想推进什么？随便说，我来整理。"
+Claude: [Keeps English templates]
+        "Great! Let me quickly get to know you:
+         1. What should I call you?
+         2. What's your profession?
+         3. What project are you currently working on?"
+
+You: "Call me Alex, I'm a product manager working on an AI education product"
+
+Claude: [Creates USER.md, MEMORY.md, _this_week.md]
+        "Alex, it's Monday, a new week begins.
+         What do you want to work on this week? Just tell me, I'll organize it."
 ```
 
 ### 4. Open in Obsidian (Optional)
