@@ -12,6 +12,8 @@
 
 </div>
 
+> 🌐 **Bilingual Support**: On first run, you'll be asked to choose between **中文** or **English**. All templates will automatically switch to your preferred language.
+
 ---
 
 ## The Problem
