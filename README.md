@@ -2,7 +2,7 @@
 
 # Memory Work
 
-**An AI-first knowledge management system with evolvable memory**
+**一套 AI 时代的注意力保护架构**
 
 [中文](./README_CN.md) | English
 
@@ -16,38 +16,130 @@
 
 ## The Problem
 
-Every time you start a conversation with AI, it forgets everything. You repeat context, re-explain preferences, and manually feed background information. Again and again.
+When you're juggling 10+ parallel projects, traditional AI assistants make things worse:
 
-**Memory Work** fixes this.
-
----
-
-## What It Does
-
-Memory Work gives Claude a **persistent, evolving memory** through a file-based architecture:
-
-| Layer | File | What It Stores |
-|-------|------|----------------|
-| Layer 0 | `SOUL.md` / `USER.md` | Identity—who Claude is, who you are |
-| Layer 1 | `_this_week.md` | Working memory—current focus |
-| Layer 2 | `MEMORY.md` | Long-term memory—decisions, preferences, insights |
-| Layer 3 | `PROCEDURES.md` | Muscle memory—"when X happens, do Y" patterns |
-
-Claude reads these files at the start of every conversation. **No manual context feeding.**
+- **AI amnesia**: Every conversation starts from scratch. You repeat context endlessly.
+- **You become the bottleneck**: Ideas → *you* structure → *you* input → *you* maintain
+- **Knowledge base becomes burden**: The bigger it gets, the harder to manage
 
 ---
 
-## How Memory Evolves
+## The Solution
+
+**Memory Work** flips the script:
+
+- Ideas → **just dictate** → AI structures → AI maintains
+- AI reads layered files at startup → **no more amnesia**
+- Divide-and-conquer agents → **scales to any vault size**
+
+**You only do two things: provide attention focus, make creative decisions.**
+
+AI handles the rest: integrating history, matching materials, structured output.
+
+---
+
+## How It Works in Claude Code
+
+### First Run: Smart Initialization
+
+When you clone this repo and open it in Claude Code, the AI automatically:
 
 ```
-You work → Claude detects something new (surprise!) → Proposes to remember it
-                                ↓
-                    You confirm → Memory saved
-                                ↓
-              Weekly review → Calibrate what's useful → Memories strengthen or fade
+1. Detects it's a fresh installation
+2. Asks your preferred language (中文 / English)
+3. Collects your basic info to create your profile
+4. Creates your first week's workspace
+5. Shows you how to open in Obsidian
+6. Asks: "What do you want to work on this week?"
 ```
 
-Based on [Titans](https://arxiv.org/abs/2501.00663) (surprise-driven learning) and [MemSkill](https://arxiv.org/abs/2501.03313) (evolvable memory).
+**You don't configure anything manually.** Just talk.
+
+### Daily Usage: Voice-First Workflow
+
+```
+You: "This week I need to finish the proposal, prep for Wednesday's
+     client meeting, and that partnership agreement needs follow-up."
+
+Claude:
+1. Breaks into 3 tasks, writes to _this_week.md
+2. Searches your vault for related materials
+3. Marks Wednesday meeting in schedule
+4. Asks you to clarify uncertainties
+```
+
+You dictate naturally. Claude structures. **Your flow state stays protected.**
+
+### Weekly Rhythm
+
+```
+Monday          →        Mid-week        →         Friday
+   │                        │                        │
+   ▼                        ▼                        ▼
+┌─────────┐           ┌─────────┐            ┌─────────┐
+│ Dictate │           │ Progress│            │ Archive │
+│   ↓     │           │   ↓     │            │   ↓     │
+│AI struct│ ────────▶ │AI assist│ ─────────▶ │AI review│
+│   ↓     │           │   ↓     │            │   ↓     │
+│Schedule │           │ Output  │            │New week │
+└─────────┘           └─────────┘            └─────────┘
+```
+
+| Phase | You Do | Claude Does |
+|-------|--------|-------------|
+| **Monday** | Dictate what you want to do | Structure tasks, pull materials, generate calendar |
+| **Mid-week** | Work, add notes anytime | Track progress, search vault, assist decisions |
+| **Friday** | Give feedback on memories | Calibrate memory, archive, create next week |
+
+---
+
+## Four-Layer Memory Architecture
+
+The core mechanism that solves AI amnesia. Inspired by [Titans](https://arxiv.org/abs/2501.00663) (surprise-driven) and [MemSkill](https://arxiv.org/abs/2501.03313) (evolvable memory).
+
+```
+Layer 0 · Persistent    SOUL.md / USER.md       Who you are, who AI is
+Layer 1 · Working       _this_week.md           Current week's focus
+Layer 2 · Dynamic       MEMORY.md               Cross-week insights, with lifecycle
+Layer 3 · Procedural    PROCEDURES.md           "When X happens, do Y" patterns
+```
+
+### How Memory Evolves
+
+```
+Conversation → AI detects "surprise" → Proposes to remember
+                      ↓
+          You confirm → Memory saved with metadata
+                      ↓
+          Weekly review → Calibrate usefulness → Strengthen or decay
+```
+
+**Surprise-driven**: Only writes when something deviates from known patterns. No noise.
+
+**User-confirmed**: AI proposes, you approve. Nothing written without consent.
+
+**Has lifecycle**: Strong memories persist (★★★), weak ones fade (★☆☆ → archive after 4 weeks inactive).
+
+---
+
+## Focus Zone: Your Attention Anchor
+
+The `00 Focus Zone/` (or `00 专注区/`) is the heart of the system:
+
+```
+00 Focus Zone/
+├── _this_week.md      ← Your current attention focus
+│   ├── Original dictation (your raw thoughts)
+│   ├── Task list (AI-structured)
+│   ├── Reference materials (AI-searched)
+│   ├── Progress log (by date)
+│   └── To be archived
+├── MEMORY_LOG.md      ← Memory system's own journal
+├── ITERATION_LOG.md   ← Architecture evolution log
+└── _archive/          ← Past weeks
+```
+
+**One week, one file.** Archive on Friday, fresh start on Monday. You never manage the backlog—it's always archived and searchable.
 
 ---
 
@@ -59,22 +151,46 @@ Based on [Titans](https://arxiv.org/abs/2501.00663) (surprise-driven learning) a
 git clone https://github.com/yiliqi78/memory-work.git
 ```
 
-### 2. Open in Obsidian
+### 2. Open in Claude Code
 
-Open folder as vault → Select `memory-work`
+```bash
+cd memory-work
+claude .   # or open in Cursor/VS Code with Claude extension
+```
 
-### 3. Connect to Claude
+### 3. Start Talking
 
-- **Claude Desktop**: Add folder to a Project
-- **Claude Code**: Open folder in IDE
+Claude will guide you through initialization:
 
-### 4. Customize
+```
+Claude: "Welcome to Memory Work! 🎉
 
-Edit `USER.md` with your info. Optionally customize `SOUL.md` for Claude's personality.
+        First, choose your language:
+        1. 中文
+        2. English"
 
-### 5. Start
+You: "1"
 
-Open `00 Focus Zone/_this_week.md` and start talking to Claude.
+Claude: [Switches to Chinese templates]
+        "好的！让我快速了解你：
+        1. 你希望我怎么称呼你？
+        2. 你的职业是什么？
+        3. 目前在做什么项目？"
+
+You: "叫我小明，我是产品经理，在做一个 AI 教育产品"
+
+Claude: [Creates USER.md, MEMORY.md, _本周.md]
+        "小明，今天周一，新的一周开始。
+        说说这周想推进什么？随便说，我来整理。"
+```
+
+### 4. Open in Obsidian (Optional)
+
+For graph view and wiki-links:
+
+1. Open Obsidian
+2. "Open folder as vault"
+3. Select the cloned `memory-work` folder
 
 ---
 
@@ -82,77 +198,78 @@ Open `00 Focus Zone/_this_week.md` and start talking to Claude.
 
 ```
 memory-work/
-├── AGENTS.md              # How Claude behaves
-├── SOUL.md                # Claude's personality
+├── CLAUDE.md              # Smart initialization instructions
+├── AGENTS.md              # AI behavioral rules (the "OS kernel")
+├── SOUL.md                # AI personality definition
 ├── USER.md                # Your profile
-├── MEMORY.md              # Long-term memories
-├── PROCEDURES.md          # Behavioral patterns
+├── MEMORY.md              # Long-term dynamic memory
+├── PROCEDURES.md          # "Context → Action" patterns
 │
-├── 00 Focus Zone/         # Weekly workspace
+├── 00 Focus Zone/         # Weekly workspace (Layer 1)
 │   ├── _this_week.md      # Current week
 │   ├── MEMORY_LOG.md      # Memory system log
 │   └── _archive/          # Past weeks
 │
 ├── 01 Materials/          # Your knowledge base
 ├── 02 Tools/              # Reusable templates
-└── 06 Skills/             # Custom AI capabilities
+├── 06 Skills/             # Custom AI capabilities
+│
+└── templates/
+    ├── zh-CN/             # Chinese templates
+    └── en/                # English templates
 ```
 
 ---
 
-## Weekly Rhythm
+## Key Concepts
 
-| Phase | You Do | Claude Does |
-|-------|--------|-------------|
-| **Monday** | Dictate what you want to do | Structure tasks, pull materials |
-| **Mid-week** | Work and add notes | Track progress, search vault |
-| **Friday** | Review memories | Calibrate, archive, prep next week |
+### Voice-First
+Don't structure your thoughts. Just talk. AI handles the organization.
 
----
+### Divide-and-Conquer Agents
+Each folder has its own agent file (`00.xxx_agent.md`) with specific rules. Personal archives need item-by-item confirmation. Project files stay isolated. Skills can be freely modified.
 
-## Key Features
+### Skill System
+Package your workflows as reusable skills. When you solve a problem repeatedly, tell Claude: "Turn this into a skill." Next time, it triggers automatically.
 
-### 🧠 Four-Layer Memory
-Persistent identity → Weekly focus → Long-term insights → Action patterns
-
-### 🎯 Surprise-Driven
-Only remembers what's new or different. No noise.
-
-### ✅ User-Confirmed
-Claude proposes, you approve. Nothing written without consent.
-
-### 📁 Zone Agents
-Each folder has its own rules. Scales to any vault size.
-
-### 🔧 Extensible Skills
-Package workflows as reusable modules in `06 Skills/`.
+### Self-Evolution
+The system gets smarter every week:
+- **Memory evolution**: MEMORY_LOG.md tracks what worked
+- **Behavior evolution**: PROCEDURES.md accumulates your patterns
+- **Architecture evolution**: ITERATION_LOG.md records changes
 
 ---
 
 ## Design Philosophy
 
-1. **Voice-first** — Dictate naturally, Claude structures
-2. **Local-first** — Your data stays on your machine
-3. **Plain text** — Markdown files, no vendor lock-in
-4. **Evolvable** — System grows smarter over time
+1. **You provide focus, AI provides structure** — Don't adapt to the tool, let the tool adapt to you
+2. **Local-first** — Your data stays on your machine, plain Markdown files
+3. **Surprise-driven** — Only remember what's genuinely new
+4. **Weekly rhythm** — Time boundaries protect your attention
+5. **Evolvable** — System grows with you, not against you
 
 ---
 
 ## Requirements
 
-- [Obsidian](https://obsidian.md) (or any Markdown editor)
-- [Claude Desktop](https://claude.ai/download) or Claude Code
+- [Claude Code](https://claude.ai) or Claude Desktop with Projects
+- [Obsidian](https://obsidian.md) (optional, for graph view)
 - That's it
+
+---
+
+## Inspiration
+
+Built on:
+- [Titans: Learning to Memorize at Test Time](https://arxiv.org/abs/2501.00663)
+- [MemSkill: Transferrable and Evolvable Memory Skill Library](https://arxiv.org/abs/2501.03313)
+- Real-world practice managing 10+ parallel projects
 
 ---
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). We welcome:
-- New skills
-- Documentation improvements
-- Translations
-- Bug fixes
+See [CONTRIBUTING.md](CONTRIBUTING.md). We welcome new skills, translations, and improvements.
 
 ---
 
@@ -162,21 +279,10 @@ MIT — see [LICENSE](LICENSE)
 
 ---
 
-## Acknowledgments
-
-Created by [@yiliqi78](https://github.com/yiliqi78)
-
-Built on insights from:
-- [Titans: Learning to Memorize at Test Time](https://arxiv.org/abs/2501.00663)
-- [MemSkill: Transferrable and Evolvable Memory Skill Library](https://arxiv.org/abs/2501.03313)
-- The Obsidian and Claude communities
-
----
-
 <div align="center">
 
-**Your AI learns about you through collaboration, not training.**
+**You don't need to remember everything. You just need to focus on now.**
 
-[Get Started →](./docs/QUICKSTART.md)
+Created by [@yiliqi78](https://github.com/yiliqi78)
 
 </div>
