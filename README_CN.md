@@ -228,7 +228,7 @@ memory-work/
 ### 口述优先
 不用整理思路。随便说。AI 来组织。
 
-> 💡 **说明**：Memory Work 本身不包含语音识别功能，需要配合语音输入工具使用。推荐：[讯飞输入法](https://srf.xunfei.cn/)、[Tless](https://tless.app/)、[闪念胶囊](https://www.smartisan.com/)，或系统自带的语音输入。英文用户可用 [Whisper](https://openai.com/whisper)、[Talon](https://talonvoice.com/)。
+> 💡 **说明**：Memory Work 本身不包含语音识别功能，需要配合语音输入工具使用。推荐：[闪电说](https://shurufa.baidu.com/)、[Typeless](https://typeless.app/)，或系统自带的语音输入。
 
 ### 分治代理
 每个文件夹有自己的代理文件（`00.xxx_agent.md`），定义独立规则。个人档案需逐条确认。项目文件保持隔离。技能可自由修改。
@@ -258,7 +258,7 @@ memory-work/
 
 - [Claude Code](https://claude.ai) 或 Claude Desktop with Projects
 - [Obsidian](https://obsidian.md)（可选，用于图谱视图）
-- **语音输入工具**（推荐）：[讯飞输入法](https://srf.xunfei.cn/)、[Tless](https://tless.app/)、[闪念胶囊](https://www.smartisan.com/)，或系统自带语音输入
+- **语音输入工具**（推荐）：[闪电说](https://shurufa.baidu.com/)、[Typeless](https://typeless.app/)，或系统自带语音输入
 
 ---
 

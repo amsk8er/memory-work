@@ -228,7 +228,7 @@ memory-work/
 ### Voice-First
 Don't structure your thoughts. Just talk. AI handles the organization.
 
-> 💡 **Note**: Memory Work itself doesn't include voice recognition. We recommend pairing it with a voice input tool like [Whisper](https://openai.com/whisper), [Talon](https://talonvoice.com/), or any system-level speech-to-text. For Chinese users, try [讯飞输入法](https://srf.xunfei.cn/) or [闪念胶囊](https://www.smartisan.com/).
+> 💡 **Note**: Memory Work itself doesn't include voice recognition. We recommend pairing it with a voice input tool like [Typeless](https://typeless.app/), [闪电说](https://shurufa.baidu.com/), or any system-level speech-to-text.
 
 ### Divide-and-Conquer Agents
 Each folder has its own agent file (`00.xxx_agent.md`) with specific rules. Personal archives need item-by-item confirmation. Project files stay isolated. Skills can be freely modified.
@@ -258,7 +258,7 @@ The system gets smarter every week:
 
 - [Claude Code](https://claude.ai) or Claude Desktop with Projects
 - [Obsidian](https://obsidian.md) (optional, for graph view)
-- **Voice input tool** (recommended): [Whisper](https://openai.com/whisper), [Talon](https://talonvoice.com/), or system speech-to-text. For Chinese: [讯飞输入法](https://srf.xunfei.cn/), [闪念胶囊](https://www.smartisan.com/), [Tless](https://tless.app/).
+- **Voice input tool** (recommended): [Typeless](https://typeless.app/), [闪电说](https://shurufa.baidu.com/), or system speech-to-text
 
 ---
 
