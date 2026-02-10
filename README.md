@@ -6,6 +6,7 @@
 
 [中文](./README_CN.md) | English
 
+[![GitHub stars](https://img.shields.io/github/stars/yiliqi78/memory-work?style=social)](https://github.com/yiliqi78/memory-work/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude](https://img.shields.io/badge/Built%20for-Claude-blueviolet)](https://claude.ai)
 [![Obsidian](https://img.shields.io/badge/Works%20with-Obsidian-purple)](https://obsidian.md)
@@ -49,10 +50,11 @@ When you clone this repo and open it in Claude Code, the AI automatically:
 ```
 1. Detects it's a fresh installation
 2. Asks your preferred language (中文 / English)
-3. Collects your basic info to create your profile
-4. Creates your first week's workspace
-5. Shows you how to open in Obsidian
-6. Asks: "What do you want to work on this week?"
+3. Automatically switches all template files based on language choice, removes the other language's files
+4. Collects your basic info to create your profile
+5. Creates your first week's workspace
+6. Shows you how to open in Obsidian
+7. Asks: "What do you want to work on this week?"
 ```
 
 **You don't configure anything manually.** Just talk.

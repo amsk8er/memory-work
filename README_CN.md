@@ -6,6 +6,7 @@
 
 中文 | [English](./README.md)
 
+[![GitHub stars](https://img.shields.io/github/stars/yiliqi78/memory-work?style=social)](https://github.com/yiliqi78/memory-work/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude](https://img.shields.io/badge/Built%20for-Claude-blueviolet)](https://claude.ai)
 [![Obsidian](https://img.shields.io/badge/Works%20with-Obsidian-purple)](https://obsidian.md)
@@ -49,10 +50,11 @@ AI 负责其余：整合历史信息、匹配相关语料、执行结构化输�
 ```
 1. 检测到这是全新安装
 2. 询问你的偏好语言（中文 / English）
-3. 收集你的基本信息，创建用户档案
-4. 创建你的第一周工作区
-5. 告诉你如何在 Obsidian 中打开
-6. 问你：「这周想做什么？」
+3. 根据语言选择，自动切换所有模板文件，删除另一语言的文件
+4. 收集你的基本信息，创建用户档案
+5. 创建你的第一周工作区
+6. 告诉你如何在 Obsidian 中打开
+7. 问你：「这周想做什么？」
 ```
 
 **你不需要手动配置任何东西。** 直接开聊。

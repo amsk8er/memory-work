@@ -41,15 +41,18 @@
 
 **如果用户选择「中文」**：
 
-1. 将 `templates/zh-CN/` 下的所有文件复制到对应位置：
+1. 将 `templates/zh-CN/` 下的所有文件覆盖到根目录：
    - `templates/zh-CN/AGENTS.md` → 覆盖根目录 `AGENTS.md`
    - `templates/zh-CN/SOUL.md` → 覆盖根目录 `SOUL.md`
    - `templates/zh-CN/USER.md` → 覆盖根目录 `USER.md`
    - `templates/zh-CN/MEMORY.md` → 覆盖根目录 `MEMORY.md`
    - `templates/zh-CN/PROCEDURES.md` → 覆盖根目录 `PROCEDURES.md`
-   - `templates/zh-CN/00 专注区/` → 复制为 `00 专注区/`（保留原 `00 Focus Zone/` 或删除）
 
-2. 创建中文目录结构：
+2. 复制中文专注区并删除英文专注区：
+   - `templates/zh-CN/00 专注区/` → 复制为 `00 专注区/`
+   - **删除** `00 Focus Zone/` 目录及其所有内容
+
+3. 创建中文目录结构：
    ```
    00 专注区/
    01 素材库/
@@ -58,7 +61,16 @@
    ```
 
 **如果用户选择「English」**：
-→ 保持当前文件不变，继续下一步
+
+1. **删除** `templates/zh-CN/00 专注区/` 目录（避免混淆）
+
+2. 保持当前英文文件不变，创建英文目录结构：
+   ```
+   00 Focus Zone/
+   01 Materials/
+   02 Tools/
+   06 Skills/
+   ```
 
 ### Step 3: 用户画像配置
 
