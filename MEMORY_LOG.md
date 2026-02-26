@@ -1,0 +1,115 @@
+---
+title: MEMORY_LOG
+type: system-log
+description: Memory system operational log - tracks memory entries, system changes, and skill development
+created: 2026-02-25
+---
+
+# MEMORY_LOG
+
+Memory system operational log. Records when memory entries are added, modified, or graduated; system architecture changes; skill creations/rewrites; and memory protocol iterations.
+
+---
+
+## Log Entries
+
+### 2026-02-25
+
+**System Initialization**
+- 初始化个人代理系统
+- 创建 USER.md 用户档案
+  - 核心身份：张小游，工商银行江苏省分行财务会计部
+  - 双线工作模式：本职工作（银行）+ 副业（趋势交易）
+  - 工作节奏：5am Project（每日5-8点专注副业）
+  - 决策风格：快速行动 + 最小化实践 + 迅速调整
+  - 工具链：Obsidian + Claude Code + ChatGPT
+- 创建本周工作文件 _this_week.md (2026-W09)
+- 创建 MEMORY_LOG.md 运行日志
+
+**Language Preference**
+- 设置为中文（内部思考、系统消息、日常对话）
+- 代码注释和提交信息使用英文
+
+**Next Steps**
+- 完成 SOUL.md 协作风格配置
+- 建立工作区域结构（本职工作 vs 副业分离）
+- 探索本职工作自动化方案
+
+---
+
+## System Architecture
+
+Current structure:
+- CLAUDE.md: System entry point ✓
+- USER.md: User profile ✓
+- SOUL.md: AI personality (to be configured)
+- MEMORY.md: Long-term memory (existing template)
+- MEMORY_LOG.md: This file ✓
+- 00 Focus Zone/: Weekly workspace ✓
+  - _this_week.md ✓
+  - _archive/ (to be created)
+
+---
+
+## Notes
+
+- 用户处于趋势交易初学阶段，需要重点支持知识体系构建和复盘流程
+- 本职工作有季节性特点（月初月末、季初季末较忙），需要灵活调整工作节奏
+- 周末时间有限（需要带两个孩子），主要工作时间在工作日
+
+---
+
+### 2026-02-26
+
+**SOUL.md Configuration Completed**
+- 完成 SOUL.md "Your Understanding of Them" 部分的个性化配置
+- 整合了用户的核心特质：
+  - 双线工作模式（本职 + 副业）
+  - 5am Project 工作机制（专注当前最重要项目，强调一段时间内只专注一项）
+  - 快速试错决策风格（最小化行动 + 快速验证 + 迅速调整）
+  - 战略思考者特质（理念、思维、学习 + 完美、行动、成就）
+  - 沟通敏感点（对拒绝和负面评价敏感，习惯压抑需求）
+- 读取了用户的 Obsidian 知识库，了解知识积累和项目结构
+- Last calibrated: 2026-02-26
+
+**SOUL.md Major Rewrite**
+- 参考 AI 博主的 SOUL 设置，全面改写协作风格部分
+- 主要变化：
+  - 从文艺化描述改为简洁直接的风格
+  - 强调「有立场、敢下结论、敢拦着」— 不是什么都"看情况"
+  - 允许适度的中文互联网口语（"这tm…""我靠"等）
+  - 明确禁区：禁止废话、禁止急于认同、禁止过度规划
+  - 保留对用户敏感点的尊重（建设性反馈方式）
+  - 强调快速试错的协作节奏（给方案不给长篇分析）
+- 保留了"Your Understanding of Them"部分（用户个性化理解）
+
+**System Architecture Update**
+- SOUL.md: AI personality ✓ (fully configured and personalized)
+
+**Project Progress - 中间业务退费管理**
+- 分析项目现状：已有完整的 Python 自动化脚本
+- 增加 .eml 邮件草稿生成功能（带附件）
+- 测试通过：.eml 文件可在公司邮件客户端正常打开
+- 下一步：维护部门收件人列表，实现完全自动化
+
+**Project Progress - 趋势交易系统**
+- 问题诊断：Mac 系统 OCR 识别率低、字段提取不准确
+- 解决方案：采用腾讯云 OCR API（1000次/月免费）
+- 实施步骤：
+  - 注册腾讯云账号并获取 API 密钥
+  - 创建虚拟环境并安装 SDK
+  - 编写测试脚本验证功能
+  - 集成到 enhanced_ocr_scan.py，替换原有 OCR
+  - 测试完整流程：成功处理 20 张截图
+- 备份：enhanced_ocr_scan_backup.py（保留原版本）
+- 状态：OCR 重构完成，但脚本仍有其他问题待修复
+
+**Tool Installation**
+- 安装 NotebookLM MCP 工具
+- 目的：整合分散在 Obsidian 和 NotebookLM 中的趋势交易知识
+- 下一步：重启会话后进行认证和知识库整合
+
+**Work Pattern Observation**
+- 用户偏好：直接操作，不要反复询问确认
+- 只在必须用户手动操作时才提醒
+- 快速试错，边做边调整
