@@ -82,6 +82,14 @@ desktop.ini
 .secrets
 private/
 
+# OpenClaw sensitive files
+openclaw-config/*.key
+openclaw-config/*.pem
+openclaw-config/.env
+openclaw-config/secrets/
+openclaw-config/*-credentials.json
+openclaw-config/openclaw.json
+
 # IDE temporary files
 .DS_Store/
 *.sublime-project
