@@ -113,3 +113,23 @@ Current structure:
 - 用户偏好：直接操作，不要反复询问确认
 - 只在必须用户手动操作时才提醒
 - 快速试错，边做边调整
+
+---
+
+### 2026-02-27
+
+**OpenClaw 双机联动 — 进行中**
+- 确认笔记本 OpenClaw 配置状态：v2026.2.25，onboard 完成，符号链接正常
+- 方案确定：Tailscale 组网实现 MacBook Pro ↔ Mac mini 直连
+- Mac mini 安装 Tailscale 受阻：需管理员权限，远程无法完成，等晚上回家
+- 龙虾 workspace 个性化待做：SOUL.md/USER.md/IDENTITY.md 还是默认模板
+- 整合思路：龙虾读 memory-work 项目文件获取用户档案，workspace 建 projects/ 引用
+
+**社群学习 — CC vs 龙虾分工**
+- Claude Code：结构化工程任务（需求明确、代码修改、项目构建）
+- OpenClaw（龙虾）：开放式探索、日常对话、文件中转站
+- 参考模式：龙虾 workspace 当共享文件夹，CC 通过路径访问
+- Happy Coder：手机端补充，可查看 CC 提交的最新内容
+
+**API Key 安全提醒**
+- openclaw.json 中 codecodex API key 为明文，已提醒用户改为环境变量引用

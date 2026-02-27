@@ -52,6 +52,11 @@ created: 2026-02-25
   - 组件：手机 + OpenClaw + MemoryWork + Claude Code
   - 目标：多端协同的个人助手系统
   - 待明确：各组件的角色和协同方式
+- [ ] [系统] ChatGPT 对话批量导出并同步到 Obsidian — **周末开工**
+  - 目标：把 ChatGPT 中有价值的项目对话沉淀到本地 Obsidian 知识库
+  - 涉及项目：趋势交易系统、减脂增肌、中间业务分析、内心探索、SNC运动营养师等
+  - 步骤：官方导出 JSON → Python 脚本转 Markdown → 按项目分类入库
+  - 后续：探索增量同步方案
 
 ---
 
@@ -86,6 +91,16 @@ created: 2026-02-25
 - Completed: 安装 NotebookLM MCP 工具
 - Next: 使用 NotebookLM MCP 整合趋势交易知识库
 
+### Fri 2026-02-27
+- In Progress: OpenClaw 双机联动配置
+  - 确认笔记本 OpenClaw 状态正常（v2026.2.25，onboard 完成，符号链接生效）
+  - 确认 Mac mini 已通过 Telegram 连接龙虾
+  - 方案确定：Tailscale 组网，Mac mini 当龙虾服务器，笔记本远程连接
+  - Mac mini 安装 Tailscale 卡住（需要管理员权限，远程无法输入密码）
+  - 龙虾 workspace 个性化也卡住（龙虾无响应）
+- Blocked: 以上两项等晚上回家后处理
+- 学习：社群讨论 CC vs 龙虾分工模式（CC 做结构化工程，龙虾做探索式协作）
+
 ---
 
 ## Documents This Week
@@ -102,8 +117,12 @@ created: 2026-02-25
 - **Week number**: 2026-W09
 - **本周特点**: 系统初始化周，建立工作流程
 - **Archive plan**: 周日晚上或下周一早晨回顾本周进展
-- **明天待办**:
+- **今晚回家待办**:
+  - 安装 Tailscale（Mac mini + 笔记本）并登录同一账号
+  - OpenClaw gateway 配置改为 tailscale serve 模式
+  - 龙虾 workspace 个性化（读 memory-work 的 SOUL.md/USER.md 同步）
+  - 笔记本连接 Mac mini 龙虾 gateway 验证
+- **本职工作待办**:
   - **重要：开始 2026年中间业务收入分产品计划情况**
-  - 重启 Claude Code 会话以加载 NotebookLM MCP 工具
-  - 准备 NotebookLM 趋势交易笔记本链接
-  - 开始整合趋势交易知识库
+- **其他待办**:
+  - NotebookLM 趋势交易知识库整合
