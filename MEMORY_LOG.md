@@ -162,3 +162,26 @@ Current structure:
 
 **API Key 安全提醒**
 - openclaw.json 中 codecodex API key 为明文，已提醒用户改为环境变量引用
+
+---
+
+### 2026-02-28
+
+**MCP 工具链配置**
+- QQ 邮箱 MCP：确认全局配置（~/.claude.json → mcpServers.email）正常
+  - 清理项目级重复配置（uvx mcp-email-server → 已删除）
+  - 统一使用全局 mcp-mail-server（npx）
+- 飞书 MCP：新增全局配置（~/.claude.json → mcpServers.lark-mcp）
+  - 包：@larksuiteoapi/lark-mcp，App ID: cli_a928456559789bd9
+  - 状态：配置已写入，待重启会话后测试
+- Telegram MCP：尝试未成功
+  - 已安装 mcp-telegram（uv tool install）
+  - 卡点：my.telegram.org 创建应用页面持续报 ERROR（尝试 3 次）
+  - 可能原因：中国 IP 限制，暂搁
+
+**Memory Write**
+- 新增 Layer 2 条目 × 4：
+  - QQ 邮箱 MCP 配置（修正：去除"可能丢失"标注，补充清理信息）
+  - 飞书 MCP 配置（新增）
+  - Telegram MCP 尝试（新增，未成功）
+  - 中收预测通知工作流（新增）

@@ -197,11 +197,39 @@ Oral names, nicknames, or shorthand → formal entity names. Purely reference la
 - **source**: W09
 
 > - 账号：zhangzidi86@qq.com
-> - MCP 包：`mcp-mail-server`（via npx）
+> - MCP 包：`mcp-mail-server`（via npx）— 全局配置
 > - IMAP：imap.qq.com:993 (SSL) / SMTP：smtp.qq.com:465 (SSL)
-> - 配置位置：`~/.claude.json` → mcpServers.email
-> - 授权码已存入环境变量 IMAP_PASSWORD / SMTP_PASSWORD
-> - **注意**：当前会话未加载邮箱 MCP，配置可能已丢失，下次使用前需检查
+> - 配置位置：`~/.claude.json` → mcpServers.email（全局）
+> - 项目级原有重复配置（uvx mcp-email-server）已清理
+> - **状态**：配置存在，重启会话后可用
+
+### 2026-02-28 飞书 MCP 配置
+- **context**: #工具链 #飞书 #MCP #通讯
+- **surprise**: 接入飞书官方 MCP，打通与龙虾（OpenClaw）的飞书通讯通道
+- **strength**: ★☆☆
+- **last_activated**: 2026-02-28
+- **source**: W09
+
+> - MCP 包：`@larksuiteoapi/lark-mcp`（官方，via npx）
+> - App ID：cli_a928456559789bd9
+> - 配置位置：`~/.claude.json` → mcpServers.lark-mcp（全局）
+> - 能力：发消息、创建群聊、日历管理、文档读取
+> - 前置：飞书开放平台需开通 IM 等权限
+> - **状态**：配置已写入，重启会话后可用，待测试
+> - **用途**：与龙虾（OpenClaw）通过飞书直接通讯
+
+### 2026-02-28 Telegram MCP 尝试（未成功）
+- **context**: #工具链 #Telegram #MCP
+- **surprise**: Telegram API 创建应用在中国 IP 环境下持续报错
+- **strength**: ★☆☆
+- **last_activated**: 2026-02-28
+- **source**: W09
+
+> - 目标：通过 Telegram MCP 直接和龙虾通讯
+> - 包：`mcp-telegram`（已通过 uv tool install 安装）
+> - 卡点：my.telegram.org 创建应用页面报 "ERROR"，尝试3次均失败
+> - 可能原因：中国 IP 限制、short name 格式、URL 字段
+> - **状态**：暂搁，后续可换网络环境重试
 
 ### 2026-02-28 中收预测通知工作流
 - **context**: #本职工作 #中收 #季度预测 #邮件自动化
