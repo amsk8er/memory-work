@@ -257,6 +257,27 @@ Repeatable patterns extracted from observed behavior. Each pattern requires 2+ e
 
 ---
 
+### Pattern 3: Quick Sync to GitHub
+
+```
+### Quick Sync to GitHub
+- **trigger**: User says "同步" / "推一下" / "备份" / "sync" or similar
+- **pattern**:
+  1. AI runs git status to check all changes
+  2. AI stages relevant files (exclude sensitive files like .env)
+  3. AI commits with descriptive message
+  4. AI pushes to GitHub
+  5. AI confirms completion to user
+- **evidence**:
+  - 2026-02-27: User asked to formalize this as a fixed workflow; confirmed she prefers AI-handled git operations
+- **exception**:
+  - If there are no changes, inform user "already up to date"
+  - If there are merge conflicts, explain situation and ask user how to proceed
+- **confidence**: high
+```
+
+---
+
 ## Version Record
 
 | Version | Date | Changes | Status |
