@@ -25,6 +25,7 @@ created: 2026-02-25
 - [ ] [银行] 撰写相关报告
 - [ ] [银行] 日常工作流程处理
 - [ ] [银行] **明天开始：2026年中间业务收入分产品计划情况**
+- [x] [银行] 纪委扩大会发言稿 — 已完成（含参考材料整理、MD撰写、DOCX生成脚本）
 
 ### 副业（趋势交易）
 
@@ -92,6 +93,8 @@ created: 2026-02-25
 - Next: 使用 NotebookLM MCP 整合趋势交易知识库
 
 ### Fri 2026-02-27
+- Completed: 纪委扩大会发言稿项目（发言稿.md + 发言稿.docx + gen_docx.py 生成脚本 + 参考材料）
+  - 产出位置：03 Projects/纪委扩大会发言稿/
 - In Progress: OpenClaw 双机联动配置
   - 确认笔记本 OpenClaw 状态正常（v2026.2.25，onboard 完成，符号链接生效）
   - 确认 Mac mini 已通过 Telegram 连接龙虾
@@ -109,6 +112,9 @@ created: 2026-02-25
 |----------|--------|----------|-------|
 | USER.md | done | /USER.md | 用户档案已完成初始化 |
 | _this_week.md | in-progress | /00 Focus Zone/_this_week.md | 本周工作文件 |
+| 发言稿.md | done | /03 Projects/纪委扩大会发言稿/发言稿.md | 纪委扩大会发言稿 |
+| 发言稿.docx | done | /03 Projects/纪委扩大会发言稿/发言稿.docx | Word 版本 |
+| gen_docx.py | done | /03 Projects/纪委扩大会发言稿/gen_docx.py | MD→DOCX 生成脚本 |
 
 ---
 
