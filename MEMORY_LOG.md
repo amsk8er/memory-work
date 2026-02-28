@@ -35,6 +35,35 @@ Memory system operational log. Records when memory entries are added, modified, 
 - 建立工作区域结构（本职工作 vs 副业分离）
 - 探索本职工作自动化方案
 
+### 2026-02-28
+
+**Memory Write**
+- 新增 Layer 2 条目：QQ 邮箱 MCP 配置（工具链记录）
+- 配置 mcp-mail-server 到 ~/.claude.json，支持 IMAP + SMTP
+- 注意：当前会话未检测到邮箱 MCP，配置可能已丢失
+
+**New Project: 中收预测**
+- 创建 `03 Projects/中收预测/` 项目目录
+- 文件清单：
+  - `README.md` — 完整工作流程（接收总行通知 → 对照省行通知 → 起草两封邮件 → 发送 → 跟踪）
+  - `收件人通讯录.md` — 14个省行部门 + 12个城市分行联系人参数表
+- 生成两封 .eml 通知邮件（2026年一季度）：
+  - 市分行通知（45人收件）：含日历表格、报送时间、C列规则
+  - 部门通知（70人收件）：含科目预测、下划预测、填报提示
+
+**New Skill: fee-income-forecast (中收预测通知)**
+- 使用 skill-creator 标准流程创建
+- 通过 package_skill.py 验证
+- 文件结构：
+  - `SKILL.md` — 工作流定义（5步流程）
+  - `references/邮件格式规范.md` — 字体、日历表格、颜色规范
+  - `references/填报规则.md` — C列规则、口径要求、报送内容
+  - `scripts/generate_eml.py` — Python .eml 生成脚本
+- 触发条件：用户提到"中收预测通知"/"生成中收邮件"等
+
+**Memory Write**
+- 新增 Layer 2 条目：中收预测通知工作流（本职工作数字化）
+
 ---
 
 ## System Architecture

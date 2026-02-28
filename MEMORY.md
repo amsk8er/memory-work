@@ -189,6 +189,36 @@ Oral names, nicknames, or shorthand → formal entity names. Purely reference la
 > Shorthand used in team conversations; formal name for docs and specifications.
 ```
 
+### 2026-02-28 QQ 邮箱 MCP 配置
+- **context**: #工具链 #邮箱 #MCP #配置
+- **surprise**: 首次配置邮箱 MCP，补全工具链拼图——AI 可直接收发邮件
+- **strength**: ★☆☆
+- **last_activated**: 2026-02-28
+- **source**: W09
+
+> - 账号：zhangzidi86@qq.com
+> - MCP 包：`mcp-mail-server`（via npx）
+> - IMAP：imap.qq.com:993 (SSL) / SMTP：smtp.qq.com:465 (SSL)
+> - 配置位置：`~/.claude.json` → mcpServers.email
+> - 授权码已存入环境变量 IMAP_PASSWORD / SMTP_PASSWORD
+> - **注意**：当前会话未加载邮箱 MCP，配置可能已丢失，下次使用前需检查
+
+### 2026-02-28 中收预测通知工作流
+- **context**: #本职工作 #中收 #季度预测 #邮件自动化
+- **surprise**: 首次将银行本职工作流程完整数字化——从总行通知到两封下游邮件的全流程 skill 化
+- **strength**: ★☆☆
+- **last_activated**: 2026-02-28
+- **source**: W09
+
+> - 每季度末月收到总行中间业务收入预测通知后，需发送两封邮件：
+>   1. **市分行通知**：给12个城市分行财会部（45人），含日历表格、C列填写规则
+>   2. **部门通知**：给省分行14个专业部门（70人），含科目预测和下划收入预测
+> - 两封邮件均抄送陈良元、徐捷，不使用公共信箱
+> - 市分行报送时间与省行财务预测通知保持一致，末日18时加报
+> - 部门报送次数较少（约2次），对齐总行关键节点
+> - 项目文件：`03 Projects/中收预测/`
+> - Skill：`06 Skills/中收预测通知/`（已通过 skill-creator 验证）
+
 ---
 
 ## Layer 3: Procedural Memory (Situation→Action Patterns)
